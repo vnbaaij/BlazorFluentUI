@@ -55,7 +55,7 @@
 <Demo Header="DatePicker with Blazor Forms Validation" Key="5" MetadataPath="CalendarPage">
     <EditForm Model=@exampleModel OnValidSubmit=@HandleValidSubmit>
         <DataAnnotationsValidator />
-        <ValidationSummary />
+        <FluentUIValidationSummary />
         <DatePicker @bind-Value=@exampleModel.DateTime ShowMonthPickerAsOverlay="true" />
         <SubmitButton Text="Submit" />
     </EditForm>

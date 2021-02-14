@@ -27,7 +27,7 @@ namespace System.Collections.ObjectModel
 
         #region Private Fields    
         [NonSerialized]
-        private DeferredEventsCollection? _deferredEvents;
+        private DeferredEventsCollection _deferredEvents;
         #endregion Private Fields
 
 

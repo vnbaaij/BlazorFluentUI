@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components
 @inherits LayoutComponentBase
 
-
+<div class="siteWrapper">
 <Stack Horizontal="true" Style="width:100%;">
     <ResponsiveLayout MinWidth="ResponsiveMode.Medium.ToMinCssValue()">
         <StackItem Grow="0" DisableShrink="true" Style="height:100%;overflow:hidden;">
@@ -33,10 +33,14 @@
                 </Stack>
             </ResponsiveLayout>
 
-            <StackItem Grow="1" Tokens="new StackItemTokens { Padding = ((int)CurrentMode <= (int)ResponsiveMode.Medium ? 10 : 0) }" Style="overflow-y:auto;">
-                @Body
-            </StackItem>
-        </Stack>
+                <div class="siteContent">
+                    <div class="sectionWrapper">
+                        @*<StackItem Grow="1" Tokens="new StackItemTokens { Padding = ((int)CurrentMode <= (int)ResponsiveMode.Medium ? 10 : 0) }" Style="overflow-y:auto;">*@
+                            @Body
+                        @*</StackItem>*@
+                    </div>
+                </div>
+            </Stack>
 
         <ResponsiveLayout MaxWidth="ResponsiveMode.Medium.ToMaxCssValue()">
             <Panel Type=@PanelType.SmallFixedNear OnDismiss=@(() => isPanelOpen = false) IsOpen=@isPanelOpen IsLightDismiss="true">
@@ -52,7 +56,8 @@
 
     </StackItem>
 
-</Stack>
+    </Stack>
+</div>
 
 @code {
 

@@ -12,7 +12,7 @@ namespace BlazorFluentUI.Demo.Client
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-            builder.RootComponents.Add<GlobalRules>("#staticcs");
+            //builder.RootComponents.Add<GlobalRules>("#staticcs");
 
             builder.RootComponents.Add<BlazorFluentUI.Demo.Shared.App>("#app");
 
