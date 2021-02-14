@@ -2,34 +2,37 @@
 
 <h1>Rating</h1>
 
-<Label>Large Stars:</Label>
-<Rating Size="RatingSize.Large" />
+<Demo Header="Rating" Key="0" MetadataPath="RatingPage">
+    <Label>Large Stars:</Label>
+    <Rating Size="RatingSize.Large" />
 
-<Label>Small Stars:</Label>
-<Rating Rating="3" />
+    <Label>Small Stars:</Label>
+    <Rating RatingValue="3" />
 
-<Label>10 Small Stars:</Label>
-<Rating Max="10" />
+    <Label>10 Small Stars:</Label>
+    <Rating Max="10" />
 
 <Label>Disabled:</Label>
 <Rating Disabled="true" />
 
-<Label>Half star in readOnly mode:</Label>
-<Rating ReadOnly="true" Rating="2.5" />
+    <Label>Half star in readOnly mode:</Label>
+    <Rating ReadOnly="true" RatingValue="2.5" />
 
-<Label>Custom icons:</Label>
-<Rating Rating="2.5" IconName="StarburstSolid" UnselectedIcon="Starburst" />
+    <Label>Custom icons:</Label>
+    <Rating RatingValue="2.5" IconName="StarburstSolid" UnselectedIcon="Starburst" />
+</Demo>
 
-<Label>Two-Way-Binding:</Label>
-<Rating Max="10" @bind-Rating="rateten" />
-@rateten of 10 Stars selected!
+<Demo Header="Two-Way-Binding" Key="1" MetadataPath="RatingPage">
+    <Rating Max="10" @bind-RatingValue="rateten" />
+    @rateten of 10 Stars selected!
+</Demo>
 
-<Label>Button binded rating (One-Way-Binding):</Label>
-<Rating AllowZeroStars="true" Rating="rate" ReadOnly="true" />
-<PrimaryButton OnClick="SetRate" Text="@buttonText" />
+<Demo Header="Button Controlled Rating" Key="2" MetadataPath="RatingPage">
+    <Rating AllowZeroStars="true" RatingValue="rate" ReadOnly="true" />
+    <PrimaryButton OnClick="SetRate" Text="@buttonText" />
+</Demo>
 
-@code
-{
+@code {
     private double rate = 0;
     private double rateten = 1;
     private string buttonText = "Click to change rating to 5";

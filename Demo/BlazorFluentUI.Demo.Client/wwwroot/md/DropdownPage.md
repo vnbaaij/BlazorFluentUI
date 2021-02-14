@@ -55,7 +55,7 @@
 <Demo Header="Dropdown using Blazor Forms Validation" Key="6" MetadataPath="DropdownPage">
     <EditForm Model="exampleModel" OnValidSubmit=@HandleValidSubmit>
         <DataAnnotationsValidator />
-        <ValidationSummary />
+        <FluentUIValidationSummary />
         <Dropdown ItemsSource=@items
                      Placeholder="Select an option"
                      @bind-SelectedOption=@(exampleModel.SelectionResult)

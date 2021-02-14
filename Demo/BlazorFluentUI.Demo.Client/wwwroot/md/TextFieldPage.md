@@ -168,7 +168,7 @@
 <Demo Header="Validation using Blazor's InputBase<string> and EditForm" Key="7" MetadataPath="TextFieldPage">
         <EditForm Model=@exampleModel OnValidSubmit=@HandleValidSubmit>
             <DataAnnotationsValidator />
-            <ValidationSummary />
+            <FluentUIValidationSummary />
 
         <div class="textFieldDiv">
             <TextField Label="OnChange - Input can't be longer than 5 characters" @bind-Value=@exampleModel.NameOnChange />
