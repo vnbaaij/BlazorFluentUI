@@ -1,4 +1,4 @@
-/// <reference path="../../BlazorFluentUI.BFUBaseComponent/wwwroot/baseComponent.d.ts" />
+/// <reference path="../../BlazorFluentUI.BaseComponent/wwwroot/baseComponent.d.ts" />
 let BlockEmbed = Quill.import('blots/block/embed');
 
 class ImageBlot extends BlockEmbed {

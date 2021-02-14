@@ -2,7 +2,7 @@
 
 namespace BlazorFluentUiDetailsList {
 
-    type EventGroup = BlazorFluentUiBaseComponent.EventGroup;
+    type EventGroup = FluentUIBaseComponent.EventGroup;
 
     interface DotNetReferenceType {
 
@@ -37,7 +37,7 @@ namespace BlazorFluentUiDetailsList {
             this.dotNet = dotNet;
             this.root = root;            
 
-            this.events = new BlazorFluentUiBaseComponent.EventGroup(this);
+            this.events = new FluentUIBaseComponent.EventGroup(this);
             
             this.events.on(root, 'mousedown', this._onRootMouseDown);
             this.events.on(root, 'dblclick', this._onRootDblClick);

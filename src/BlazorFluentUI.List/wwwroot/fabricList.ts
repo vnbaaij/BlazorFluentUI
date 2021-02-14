@@ -1,10 +1,10 @@
 //declare interface Window { debounce(func: Function, wait: number, immediate: boolean): Function }
-// /// <reference path="../../BlazorFluentUI.BFUFocusTrapZone/wwwroot/focusTrapZone.ts" />
+// /// <reference path="../../BlazorFluentUI.FocusTrapZone/wwwroot/focusTrapZone.ts" />
 /// <reference path="../../BlazorFluentUI.BaseComponent/wwwroot/baseComponent.ts" />
 
 namespace BlazorFluentUiList {
 
-    type EventGroup = BlazorFluentUiBaseComponent.EventGroup;
+    type EventGroup = FluentUIBaseComponent.EventGroup;
     interface DotNetReferenceType {
 
     invokeMethod<T>(methodIdentifier: string, ...args: any[]): T;
@@ -25,9 +25,9 @@ namespace BlazorFluentUiList {
     }
 
     var _lastId: number = 0;
-    var cachedLists: Map<number, BFUList> = new Map<number, BFUList>();
+    var cachedLists: Map<number, List> = new Map<number, List>();
     
-    class BFUList {
+    class List {
         events: EventGroup;
         cachedSizes: Map<string, number> = new Map<string, number>();
         averageHeight: number = 40;
@@ -52,11 +52,11 @@ namespace BlazorFluentUiList {
 
             //this.surfaceElement = rootElement.children.item(0) as HTMLElement;
 
-            this.scrollElement = BlazorFluentUiBaseComponent.findScrollableParent(spacerBefore);
+            this.scrollElement = FluentUIBaseComponent.findScrollableParent(spacerBefore);
             // get initial width
             this.component.invokeMethodAsync('ResizeHandler', this.scrollElement.clientWidth);
 
-            this.events = new BlazorFluentUiBaseComponent.EventGroup(this);
+            this.events = new FluentUIBaseComponent.EventGroup(this);
             this.events.on(window, 'resize', this.resize);
 
             this.rootElement = spacerBefore.parentElement;
@@ -168,7 +168,7 @@ namespace BlazorFluentUiList {
     
     export function initialize(component: DotNetReferenceType, spacerBefore: HTMLElement, spacerAfter: HTMLElement, reset: boolean=false): any {
 
-        let list: BFUList = new BFUList(component, spacerBefore, spacerAfter);
+        let list: List = new List(component, spacerBefore, spacerAfter);
         cachedLists.set(list.id, list);
 
         return list.id;

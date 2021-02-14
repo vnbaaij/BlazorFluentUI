@@ -44,8 +44,8 @@ var BlazorFluentUiMarqueeSelection;
     BlazorFluentUiMarqueeSelection.getRect = getRect;
     class AutoScroll {
         constructor(element) {
-            this._events = new BlazorFluentUiBaseComponent.EventGroup(this);
-            this._scrollableParent = BlazorFluentUiBaseComponent.findScrollableParent(element);
+            this._events = new FluentUIBaseComponent.EventGroup(this);
+            this._scrollableParent = FluentUIBaseComponent.findScrollableParent(element);
             this._incrementScroll = this._incrementScroll.bind(this);
             this._scrollRect = getRect(this._scrollableParent);
             // tslint:disable-next-line:no-any
@@ -223,9 +223,9 @@ var BlazorFluentUiMarqueeSelection;
             this.dotNet = dotNet;
             this.root = root;
             this.props = props;
-            this.events = new BlazorFluentUiBaseComponent.EventGroup(this);
-            this._async = new BlazorFluentUiBaseComponent.Async(this);
-            this.scrollableParent = BlazorFluentUiBaseComponent.findScrollableParent(root);
+            this.events = new FluentUIBaseComponent.EventGroup(this);
+            this._async = new FluentUIBaseComponent.Async(this);
+            this.scrollableParent = FluentUIBaseComponent.findScrollableParent(root);
             this.scrollableSurface = this.scrollableParent === window ? document.body : this.scrollableParent;
             const hitTarget = props.isDraggingConstrainedToRoot ? this.root : this.scrollableSurface;
             this.events.on(hitTarget, 'mousedown', this.onMouseDown);

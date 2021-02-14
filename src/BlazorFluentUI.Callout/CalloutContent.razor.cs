@@ -121,7 +121,7 @@ namespace BlazorFluentUI
 
         private async void FocusFirstElement()
         {
-            //await jSRuntime.InvokeVoidAsync("BlazorFluentUiBaseComponent.focusFirstElementChild", RootElementReference);
+            //await jSRuntime.InvokeVoidAsync("FluentUIBaseComponent.focusFirstElementChild", RootElementReference);
         }
 
         [JSInvokable]
@@ -201,7 +201,7 @@ namespace BlazorFluentUI
             else
             {
                 //javascript to get screen bounds
-                maxBounds = await JSRuntime.InvokeAsync<Rectangle>("BlazorFluentUiBaseComponent.getWindowRect");
+                maxBounds = await JSRuntime.InvokeAsync<Rectangle>("FluentUIBaseComponent.getWindowRect");
                 maxBounds.top += MinPagePadding;
                 maxBounds.left += MinPagePadding;
                 maxBounds.bottom -= MinPagePadding;
@@ -369,7 +369,7 @@ namespace BlazorFluentUI
 
         private async Task<PartialRectangle> FinalizeElementPositionAsync(Rectangle elementRectangle, /* hostElement, */ RectangleEdge targetEdge, Rectangle bounds, RectangleEdge alignmentEdge)
         {
-            var hostRectangle = await JSRuntime.InvokeAsync<Rectangle>("BlazorFluentUiBaseComponent.measureElementRect", RootElementReference);
+            var hostRectangle = await JSRuntime.InvokeAsync<Rectangle>("FluentUIBaseComponent.measureElementRect", RootElementReference);
             //Debug.WriteLine($"HostRect: {hostRectangle.left}, {hostRectangle.top}, {hostRectangle.right}, {hostRectangle.bottom}");
 
 
@@ -448,7 +448,7 @@ namespace BlazorFluentUI
 
             //Now calculate positionedElement
             //GetRectangleFromElement()
-            var calloutRectangle = await JSRuntime.InvokeAsync<Rectangle>("BlazorFluentUiBaseComponent.measureElementRect", calloutReference);
+            var calloutRectangle = await JSRuntime.InvokeAsync<Rectangle>("FluentUIBaseComponent.measureElementRect", calloutReference);
             //Debug.WriteLine($"Callout: {calloutRectangle.left}, {calloutRectangle.top}, {calloutRectangle.right}, {calloutRectangle.bottom}");
 
             var positionedElement = PositionElementWithinBounds(calloutRectangle, targetRect, boundingRect, positionData, gap);
