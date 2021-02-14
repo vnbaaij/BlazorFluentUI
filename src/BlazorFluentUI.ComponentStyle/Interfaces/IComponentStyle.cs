@@ -5,7 +5,7 @@ namespace BlazorFluentUI
 {
     public interface IComponentStyle
     {
-        bool ClientSide { get; }
+        bool isClient { get; }
 
         GlobalRules GlobalRules { get; set; }
 

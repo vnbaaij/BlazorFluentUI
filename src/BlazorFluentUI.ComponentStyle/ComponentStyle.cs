@@ -17,7 +17,7 @@ namespace BlazorFluentUI
         private static Dictionary<PropertyInfo, List<Attribute>> _attributeDictionary = new Dictionary<PropertyInfo, List<Attribute>>();
         private static Dictionary<PropertyInfo, Func<object, object>> _rulePropertiesGetters = new Dictionary<PropertyInfo, Func<object, object>>();
 
-        public bool ClientSide { get; } = RuntimeInformation.IsOSPlatform(OSPlatform.Create("WEBASSEMBLY"));
+        public bool isClient { get; } = RuntimeInformation.IsOSPlatform(OSPlatform.Create("WEBASSEMBLY"));
 
         public GlobalRules? GlobalRules { get; set; }
 
@@ -82,7 +82,7 @@ namespace BlazorFluentUI
 
 
         private void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {            
+        {
             if (e.OldItems != null)
             {
                 foreach (var item in e.OldItems)
@@ -229,7 +229,7 @@ namespace BlazorFluentUI
             if (rule.Properties == null)
                 return "";
             var ruleAsString = "";
-            
+
             ruleAsString += $"{(rule as Rule)?.Selector?.GetSelectorAsString()}{{";
 
             if (rule.Properties is CssString)
@@ -315,7 +315,7 @@ namespace BlazorFluentUI
             return attribute;
         }
 
-        private static Func<object, object> GetCachedGetter(PropertyInfo property, Dictionary<PropertyInfo, Func<object,object>> cache) 
+        private static Func<object, object> GetCachedGetter(PropertyInfo property, Dictionary<PropertyInfo, Func<object,object>> cache)
         {
             Func<object,object> getter;
             var start = DateTime.Now.Ticks;

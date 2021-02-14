@@ -4,7 +4,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace BlazorFluentUI.Demo.ClientSide
+namespace BlazorFluentUI.Demo.Client
 {
     public class Program
     {

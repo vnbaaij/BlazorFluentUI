@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFluentUI.Label", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFluentUI.BaseComponent", "src\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj", "{4F61DC73-0306-4E84-B0AD-96DA696538BD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServerSide", "ServerSide", "{138B8CC9-BD89-40A9-8BFD-C1B4794C64C7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{138B8CC9-BD89-40A9-8BFD-C1B4794C64C7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFluentUI.Checkbox", "src\BlazorFluentUI.Checkbox\BlazorFluentUI.Checkbox.csproj", "{84CC73BB-8759-44DE-9148-BD5293E0193E}"
 EndProject
@@ -105,11 +105,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{450B75BB-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EB69E4C8-2C83-4AF1-8877-3B4F9C4B06FF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientSide", "ClientSide", "{93D4755C-B4E6-44DE-8488-ADA4C3AB8E21}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{93D4755C-B4E6-44DE-8488-ADA4C3AB8E21}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFluentUI.Demo.ClientSide", "Demo\BlazorFluentUI.Demo.ClientSide\BlazorFluentUI.Demo.ClientSide.csproj", "{B3E162E0-F8C4-4DAD-A672-42663763E256}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFluentUI.Demo.Client", "Demo\BlazorFluentUI.Demo.Client\BlazorFluentUI.Demo.Client.csproj", "{B3E162E0-F8C4-4DAD-A672-42663763E256}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFluentUI.Demo.ServerSide", "Demo\BlazorFluentUI.Demo.ServerSide\BlazorFluentUI.Demo.ServerSide.csproj", "{DBB167DF-0D7F-4D40-997C-60A4B5351DAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFluentUI.Demo.Server", "Demo\BlazorFluentUI.Demo.Server\BlazorFluentUI.Demo.Server.csproj", "{DBB167DF-0D7F-4D40-997C-60A4B5351DAB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFluentUI.Theme", "src\BlazorFluentUI.Theme\BlazorFluentUI.Theme.csproj", "{9C060E23-B2BA-40D0-83E5-23CF07B22DFD}"
 EndProject
