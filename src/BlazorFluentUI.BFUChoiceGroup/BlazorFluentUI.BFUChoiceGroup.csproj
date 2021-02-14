@@ -18,9 +18,9 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUComponentStyle\BlazorFluentUI.BFUComponentStyle.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFULabel\BlazorFluentUI.BFULabel.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.ComponentStyle\BlazorFluentUI.ComponentStyle.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Label\BlazorFluentUI.Label.csproj" />
   </ItemGroup>
 
 </Project>

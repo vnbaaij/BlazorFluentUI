@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUPersona</AssemblyName>
+    <AssemblyName>BlazorFluentUI.Persona</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
@@ -17,10 +17,10 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUIcon\BlazorFluentUI.BFUIcon.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUImage\BlazorFluentUI.BFUImage.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUTooltip\BlazorFluentUI.BFUTooltip.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Icon\BlazorFluentUI.Icon.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Image\BlazorFluentUI.Image.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Tooltip\BlazorFluentUI.Tooltip.csproj" />
   </ItemGroup>
 
 </Project>

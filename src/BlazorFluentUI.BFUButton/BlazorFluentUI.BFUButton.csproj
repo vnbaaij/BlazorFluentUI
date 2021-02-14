@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUButton</AssemblyName>
+    <AssemblyName>BlazorFluentUI.Button</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <Description>Buttons from Blazor port of Fluent UI</Description>
@@ -12,10 +12,10 @@
    </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUContextualMenu\BlazorFluentUI.BFUContextualMenu.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUIcon\BlazorFluentUI.BFUIcon.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUKeytip\BlazorFluentUI.BFUKeytip.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.ContextualMenu\BlazorFluentUI.ContextualMenu.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Icon\BlazorFluentUI.Icon.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Keytip\BlazorFluentUI.Keytip.csproj" />
   </ItemGroup>
 
 

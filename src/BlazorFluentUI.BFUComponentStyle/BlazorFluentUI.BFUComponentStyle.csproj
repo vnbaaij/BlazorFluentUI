@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUComponentStyle</AssemblyName>
+    <AssemblyName>BlazorFluentUI.ComponentStyle</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFURichTextEditor</AssemblyName>
+    <AssemblyName>BlazorFluentUI.RichTextEditor</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
@@ -21,11 +21,11 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUCommandBar\BlazorFluentUI.BFUCommandBar.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUDialog\BlazorFluentUI.BFUDialog.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUStack\BlazorFluentUI.BFUStack.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUTextField\BlazorFluentUI.BFUTextField.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.CommandBar\BlazorFluentUI.CommandBar.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Dialog\BlazorFluentUI.Dialog.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Stack\BlazorFluentUI.Stack.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.TextField\BlazorFluentUI.TextField.csproj" />
   </ItemGroup>
 
 </Project>

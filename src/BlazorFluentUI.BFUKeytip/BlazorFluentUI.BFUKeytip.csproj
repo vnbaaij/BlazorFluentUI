@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUKeytip</AssemblyName>
+    <AssemblyName>BlazorFluentUI.Keytip</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
@@ -17,8 +17,8 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUCallout\BlazorFluentUI.BFUCallout.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Callout\BlazorFluentUI.Callout.csproj" />
   </ItemGroup>
 
 </Project>

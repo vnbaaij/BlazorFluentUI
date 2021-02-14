@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUCommandBar</AssemblyName>
+    <AssemblyName>BlazorFluentUI.CommandBar</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
@@ -23,11 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUButton\BlazorFluentUI.BFUButton.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUOverflowSet\BlazorFluentUI.BFUOverflowSet.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUResizeGroup\BlazorFluentUI.BFUResizeGroup.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUTooltip\BlazorFluentUI.BFUTooltip.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Button\BlazorFluentUI.Button.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.OverflowSet\BlazorFluentUI.OverflowSet.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.ResizeGroup\BlazorFluentUI.ResizeGroup.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Tooltip\BlazorFluentUI.Tooltip.csproj" />
   </ItemGroup>
 
 </Project>

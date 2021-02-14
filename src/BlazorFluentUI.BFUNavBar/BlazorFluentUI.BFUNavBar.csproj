@@ -13,14 +13,14 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUButton\BlazorFluentUI.BFUButton.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUCommandBar\BlazorFluentUI.BFUCommandBar.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUNav\BlazorFluentUI.BFUNav.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUOverflowSet\BlazorFluentUI.BFUOverflowSet.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUResizeGroup\BlazorFluentUI.BFUResizeGroup.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUStack\BlazorFluentUI.BFUStack.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUTooltip\BlazorFluentUI.BFUTooltip.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Button\BlazorFluentUI.Button.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.CommandBar\BlazorFluentUI.CommandBar.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Nav\BlazorFluentUI.Nav.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.OverflowSet\BlazorFluentUI.OverflowSet.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.ResizeGroup\BlazorFluentUI.ResizeGroup.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Stack\BlazorFluentUI.Stack.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Tooltip\BlazorFluentUI.Tooltip.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUDatePicker</AssemblyName>
+    <AssemblyName>BlazorFluentUI.DatePicker</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
@@ -16,11 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUCalendar\BlazorFluentUI.BFUCalendar.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUCallout\BlazorFluentUI.BFUCallout.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUFocusTrapZone\BlazorFluentUI.BFUFocusTrapZone.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUTextField\BlazorFluentUI.BFUTextField.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Calendar\BlazorFluentUI.Calendar.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Callout\BlazorFluentUI.Callout.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.FocusTrapZone\BlazorFluentUI.FocusTrapZone.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.TextField\BlazorFluentUI.TextField.csproj" />
   </ItemGroup>
 
 </Project>

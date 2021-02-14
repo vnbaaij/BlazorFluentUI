@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUCalendar</AssemblyName>
+    <AssemblyName>BlazorFluentUI.Calendar</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -15,11 +15,11 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUButton\BlazorFluentUI.BFUButton.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUFocusZone\BlazorFluentUI.BFUFocusZone.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUIcon\BlazorFluentUI.BFUIcon.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUTooltip\BlazorFluentUI.BFUTooltip.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Button\BlazorFluentUI.Button.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.FocusZone\BlazorFluentUI.FocusZone.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Icon\BlazorFluentUI.Icon.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Tooltip\BlazorFluentUI.Tooltip.csproj" />
   </ItemGroup>
 
 </Project>

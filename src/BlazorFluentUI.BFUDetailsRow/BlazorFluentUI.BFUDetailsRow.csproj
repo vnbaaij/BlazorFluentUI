@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUDetailsRow</AssemblyName>
+    <AssemblyName>BlazorFluentUI.DetailsRow</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
@@ -16,10 +16,10 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUCheck\BlazorFluentUI.BFUCheck.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUFocusZone\BlazorFluentUI.BFUFocusZone.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUSelectionZone\BlazorFluentUI.BFUSelectionZone.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Check\BlazorFluentUI.Check.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.FocusZone\BlazorFluentUI.FocusZone.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.SelectionZone\BlazorFluentUI.SelectionZone.csproj" />
   </ItemGroup>
 
 </Project>

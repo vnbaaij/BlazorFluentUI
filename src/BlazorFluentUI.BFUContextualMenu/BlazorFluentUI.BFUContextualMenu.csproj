@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUContextualMenu</AssemblyName>
+    <AssemblyName>BlazorFluentUI.ContextualMenu</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
@@ -27,11 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUCallout\BlazorFluentUI.BFUCallout.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUFocusZone\BlazorFluentUI.BFUFocusZone.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUIcon\BlazorFluentUI.BFUIcon.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUResponsiveLayout\BlazorFluentUI.BFUResponsiveLayout.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Callout\BlazorFluentUI.Callout.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.FocusZone\BlazorFluentUI.FocusZone.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Icon\BlazorFluentUI.Icon.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.ResponsiveLayout\BlazorFluentUI.ResponsiveLayout.csproj" />
   </ItemGroup>
 
 </Project>

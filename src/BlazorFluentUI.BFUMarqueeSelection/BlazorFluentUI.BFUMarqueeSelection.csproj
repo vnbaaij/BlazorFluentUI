@@ -15,8 +15,8 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUSelectionZone\BlazorFluentUI.BFUSelectionZone.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.SelectionZone\BlazorFluentUI.SelectionZone.csproj" />
   </ItemGroup>
 
 

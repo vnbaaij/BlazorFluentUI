@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUMessageBar\BlazorFluentUI.BFUMessageBar.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.MessageBar\BlazorFluentUI.MessageBar.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUDialog</AssemblyName>
+    <AssemblyName>BlazorFluentUI.Dialog</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
@@ -17,10 +17,10 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUButton\BlazorFluentUI.BFUButton.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUModal\BlazorFluentUI.BFUModal.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUTooltip\BlazorFluentUI.BFUTooltip.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Button\BlazorFluentUI.Button.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Modal\BlazorFluentUI.Modal.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Tooltip\BlazorFluentUI.Tooltip.csproj" />
   </ItemGroup>
 
 </Project>

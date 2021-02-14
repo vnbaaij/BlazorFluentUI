@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUPanel</AssemblyName>
+    <AssemblyName>BlazorFluentUI.Panel</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
@@ -20,10 +20,10 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUButton\BlazorFluentUI.BFUButton.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUFocusTrapZone\BlazorFluentUI.BFUFocusTrapZone.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUOverlay\BlazorFluentUI.BFUOverlay.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Button\BlazorFluentUI.Button.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.FocusTrapZone\BlazorFluentUI.FocusTrapZone.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Overlay\BlazorFluentUI.Overlay.csproj" />
   </ItemGroup>
 
 

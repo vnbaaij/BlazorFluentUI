@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>BlazorFluentUI.BFUDocumentCard</AssemblyName>
+    <AssemblyName>BlazorFluentUI.DocumentCard</AssemblyName>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
@@ -23,11 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorFluentUI.BFUBaseComponent\BlazorFluentUI.BFUBaseComponent.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUButton\BlazorFluentUI.BFUButton.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUIcon\BlazorFluentUI.BFUIcon.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFULink\BlazorFluentUI.BFULink.csproj" />
-    <ProjectReference Include="..\BlazorFluentUI.BFUPersona\BlazorFluentUI.BFUPersona.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.BaseComponent\BlazorFluentUI.BaseComponent.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Button\BlazorFluentUI.Button.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Icon\BlazorFluentUI.Icon.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Link\BlazorFluentUI.Link.csproj" />
+    <ProjectReference Include="..\BlazorFluentUI.Persona\BlazorFluentUI.Persona.csproj" />
   </ItemGroup>
 
 </Project>
