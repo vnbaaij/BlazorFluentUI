@@ -3,8 +3,8 @@
 @inherits ValidationSummary
 
 @{ var validationMessages = Model is null ?
-                                     CurrentEditContext.GetValidationMessages() :
-                                     CurrentEditContext.GetValidationMessages(new FieldIdentifier(Model, string.Empty));
+                                     FluentUIEditContext.GetValidationMessages() :
+                                     FluentUIEditContext.GetValidationMessages(new FieldIdentifier(Model, string.Empty));
 
     @if (validationMessages.Count() > 0)
     {
@@ -24,6 +24,6 @@
 }
 
 @code {
-    [CascadingParameter] EditContext CurrentEditContext { get; set; } = default!;
+    [CascadingParameter] EditContext FluentUIEditContext { get; set; } = default!;
 
 }

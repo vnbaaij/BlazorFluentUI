@@ -34,7 +34,7 @@
     <Stack Tokens=stackTokens>
         <EditForm Model="exampleModel" OnValidSubmit=@HandleValidSubmit>
             <DataAnnotationsValidator />
-            <ValidationSummary />
+            <FluentUIValidationSummary />
             <Label>Do you agree with the terms?</Label>
             <Checkbox Label="I agree with the terms!" @bind-Checked=@(exampleModel.IsChecked)/>
             <SubmitButton Text="Submit" />
