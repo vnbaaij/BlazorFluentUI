@@ -35,13 +35,13 @@
         <TextField Label="With Input Mask" MaskChar="+" />
     </div>*@
     <div class="textFieldDiv">
-        <TextField Label="With Placeholder" Placeholder="placeholder text" />
+        <TextField Label="With Placeholder" Placeholder="Placeholder text" />
     </div>
     <div class="textFieldDiv">
-        <TextField Label="Disabled Placeholder" Placeholder="placeholder text" Disabled="true" />
+        <TextField Label="Disabled Placeholder" Placeholder="Placeholder text" Disabled="true" />
     </div>
     <div class="textFieldDiv">
-        <TextField Label="Disabled Placeholder" Placeholder="placeholder text" Disabled="true" />
+        <TextField Label="Disabled Placeholder" Placeholder="Placeholder text" Disabled="true" />
     </div>
 </Demo>
 
@@ -71,7 +71,7 @@
     </div>
 </Demo>
 
-<Demo Header="TextField with no labels" Key="2" MetadataPath="TextFieldPage">
+<Demo Header="TextField with no Labels" Key="2" MetadataPath="TextFieldPage">
     <div class="textFieldDiv">
         <TextField Required="true" />
     </div>
@@ -145,23 +145,23 @@
     <div class="textFieldDiv">
         <TextField Label="String-based validation only on change" DefaultValue="Validates only on input change, not on first render" OnGetErrorMessage="GetErrorMessage" ValidateOnLoad="false" />
     </div>
-    <div class="textfielddiv">
-        <bfutextfield label="both description and error message" defaultvalue="shows description and error message on render" description="field description" ongeterrormessage="geterrormessage" />
+    <div class="textfieldDiv">
+        <TextField Label="both description and error message" DefaultValue="shows description and error message on render" Description="field description" OnGetErrorMessage="GetErrorMessage" />
     </div>
-    <div class="textfielddiv">
-        <bfutextfield label="deferred string-based validation" placeholder="validates after user stops typing for 2 seconds" deferredvalidationtime="2000" ongeterrormessage="geterrormessage" />
+    <div class="textfieldDiv">
+        <TextField Label="deferred string-based validation" Placeholder="validates after user stops typing for 2 seconds" DeferredValidationTime="2000" OnGetErrorMessage="GetErrorMessage" />
     </div>
-    <div class="textfielddiv">
-        <bfutextfield label="validates only on focus and blur" placeholder="validates only on input focus and blur" validateonfocusin="true" validateonfocusout="true" ongeterrormessage="geterrormessage" />
+    <div class="textfieldDiv">
+        <TextField Label="validates only on focus and blur" Placeholder="validates only on input focus and blur" ValidateOnFocusIn="true" ValidateOnFocusOut="true" OnGetErrorMessage="GetErrorMessage" />
     </div>
-    <div class="textfielddiv">
-        <bfutextfield label="validates only on blur" placeholder="validates only on blur" validateonfocusout="true" ongeterrormessage="geterrormessage" />
+    <div class="textfieldDiv">
+        <TextField Label="validates only on blur" Placeholder="validates only on blur" ValidateOnFocusOut="true" OnGetErrorMessage="GetErrorMessage" />
     </div>
-    <div class="textfielddiv">
-        <bfutextfield label="underlined field " defaultvalue="this value is too long" underlined="true" ongeterrormessage="geterrormessage" />
+    <div class="textfieldDiv">
+        <TextField Label="underlined field " DefaultValue="this value is too long" Underlined="true" OnGetErrorMessage="GetErrorMessage" />
     </div>
-    <div class="textfielddiv">
-        <bfutextfield label="uses the errormessage property to set an error state" placeholder="this field always has an error" errormessage="this is a statically set error message" />
+    <div class="textfieldDiv">
+        <TextField Label="uses the errormessage property to set an error state" Placeholder="this field always has an error" ErrorMessage="this is a statically set error message" />
     </div>
 </Demo>
 
@@ -198,7 +198,7 @@
 
     public void HandleValidSubmit()
     {
-        var i = 3;
+
     }
 
     public string GetErrorMessage(string value)
