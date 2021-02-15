@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>BlazorFluentUI.Check</AssemblyName>
+		<Description>Check component from Blazor port of Fluent UI React library</Description>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>disable</Nullable>
     <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
