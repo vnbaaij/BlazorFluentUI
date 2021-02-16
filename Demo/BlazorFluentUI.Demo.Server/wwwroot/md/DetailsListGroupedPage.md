@@ -16,19 +16,21 @@
                          Style="max-width:300px;">
             </Dropdown>
         </Stack>
-        <DetailsList ItemsSource="ReadonlyList"
-                        @ref="detailsList"
-                        Columns="ReadonlyColumns"
-                        GetKey="(item)=>item.Key"
-                        TItem="GroupedDataItem"
-                        Compact="@isCompact.GetValueOrDefault()"
-                        IsVirtualizing="@isVirtualizing.GetValueOrDefault()"
-                        SubGroupSelector=@(item=> item.ObservableData)
-                        GroupTitleSelector=@(item=>item.DisplayName)
-                        LayoutMode="DetailsListLayoutMode.Justified"
-                        Selection="selection"
-                        SelectionMode=@((SelectionMode)Enum.Parse(typeof(SelectionMode), selectedModeOption.Key))>
-        </DetailsList>
+        <div data-is-scrollable="true">
+            <DetailsList ItemsSource="ReadonlyList"
+                         @ref="detailsList"
+                         Columns="ReadonlyColumns"
+                         GetKey="(item)=>item.Key"
+                         TItem="GroupedDataItem"
+                         Compact="@isCompact.GetValueOrDefault()"
+                         IsVirtualizing="@isVirtualizing.GetValueOrDefault()"
+                         SubGroupSelector=@(item=> item.ObservableData)
+                         GroupTitleSelector=@(item=>item.DisplayName)
+                         LayoutMode="DetailsListLayoutMode.Justified"
+                         Selection="selection"
+                         SelectionMode=@((SelectionMode)Enum.Parse(typeof(SelectionMode), selectedModeOption.Key))>
+            </DetailsList>
+        </div>
     </Stack>
 
 @code {
