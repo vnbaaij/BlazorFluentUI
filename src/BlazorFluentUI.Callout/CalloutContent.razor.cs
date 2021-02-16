@@ -94,11 +94,11 @@ namespace BlazorFluentUI
             {
                 isEventHandlersRegistered = true;
 
-                eventHandlerIds = await JSRuntime.InvokeAsync<List<int>>("BlazorFluentUiCallout.registerHandlers", this.RootElementReference, DotNetObjectReference.Create(this));
+                eventHandlerIds = await JSRuntime.InvokeAsync<List<int>>("BlazorFluentUiCallout.registerHandlers", RootElementReference, DotNetObjectReference.Create(this));
 
                 
 
-                if (!isMeasured && this.FabricComponentTarget != null && firstRender)
+                if (!isMeasured && FabricComponentTarget != null && firstRender)
                 {
                     await CalculateCalloutPositionAsync();
                 }
@@ -119,10 +119,10 @@ namespace BlazorFluentUI
             await base.OnAfterRenderAsync(firstRender);
         }
 
-        private async void FocusFirstElement()
-        {
-            //await jSRuntime.InvokeVoidAsync("FluentUIBaseComponent.focusFirstElementChild", RootElementReference);
-        }
+        //private async void FocusFirstElement()
+        //{
+        //    //await jSRuntime.InvokeVoidAsync("FluentUIBaseComponent.focusFirstElementChild", RootElementReference);
+        //}
 
         [JSInvokable]
         public async void ScrollHandler()
@@ -138,14 +138,14 @@ namespace BlazorFluentUI
             //await HiddenChanged.InvokeAsync(true);
         }
 
-        [JSInvokable]
-        public async void FocusHandler()
-        {
-            //Need way to tie focus handler between all the callouts (linked contextualmenus)  ... only dimiss when ALL of them lost focus.
-            System.Diagnostics.Debug.WriteLine($"Callout {PortalId} called dismiss from FocusHandler from {this.DirectionalHint}");
+        //[JSInvokable]
+        //public async void FocusHandler()
+        //{
+        //    //Need way to tie focus handler between all the callouts (linked contextualmenus)  ... only dimiss when ALL of them lost focus.
+        //    System.Diagnostics.Debug.WriteLine($"Callout {PortalId} called dismiss from FocusHandler from {this.DirectionalHint}");
 
-            //await OnDismiss.InvokeAsync(null);
-        }
+        //    //await OnDismiss.InvokeAsync(null);
+        //}
 
         [JSInvokable]
         public async void ClickHandler()
@@ -173,7 +173,7 @@ namespace BlazorFluentUI
 
         protected override async Task OnParametersSetAsync()
         {
-            if (this.FabricComponentTarget != null && !isMeasured && isRenderedOnce)
+            if (FabricComponentTarget != null && !isMeasured && isRenderedOnce)
             {
                 _finalPositionAnnounced = false;
                 //this will never get called initially because the target won't be rendered yet.  Shouldn't be called after due to isMeasured  
@@ -196,7 +196,7 @@ namespace BlazorFluentUI
         private async Task CalculateCalloutPositionAsync()
         {
             Rectangle maxBounds = null;
-            if (this.Bounds != null)
+            if (Bounds != null)
                 maxBounds = Bounds;
             else
             {
@@ -209,7 +209,7 @@ namespace BlazorFluentUI
                 maxBounds.width -= (2 * MinPagePadding);
                 maxBounds.height -= (2 * MinPagePadding);
             }
-            var targetRect = await this.FabricComponentTarget.GetBoundsAsync();
+            var targetRect = await FabricComponentTarget.GetBoundsAsync();
             //Debug.WriteLine($"TargetRect: {targetRect.left}, {targetRect.top}, {targetRect.right}, {targetRect.bottom}");
 
             contentMaxHeight = GetMaxHeight(targetRect, maxBounds);
@@ -219,7 +219,7 @@ namespace BlazorFluentUI
             }
             //StateHasChanged();
 
-            this.CalloutPosition = await PositionCalloutAsync(targetRect, maxBounds);
+            CalloutPosition = await PositionCalloutAsync(targetRect, maxBounds);
             //this.CalloutPosition = calloutPositioning;
             //Debug.WriteLine($"CalloutPosition: {CalloutPosition.ElementRectangle.left}, {CalloutPosition.ElementRectangle.top}, {CalloutPosition.ElementRectangle.right}, {CalloutPosition.ElementRectangle.bottom}");
 
@@ -236,7 +236,7 @@ namespace BlazorFluentUI
             if (DirectionalHintFixed)
             {
                 var gap = GapSpace + BeakWidth + (1/*BORDER_WIDTH*/ * 2);
-                return GetMaxHeightFromTargetRectangle(targetRect, this.DirectionalHint, gap, maxBounds);
+                return GetMaxHeightFromTargetRectangle(targetRect, DirectionalHint, gap, maxBounds);
             }
             else
             {
@@ -506,9 +506,9 @@ namespace BlazorFluentUI
 
         private Rectangle EstimatePosition(Rectangle elementToPosition, Rectangle target, PositionDirectionalHintData positionData, double gap = 0)
         {
-            var elementEdge = this.CoverTarget ? positionData.TargetEdge : (RectangleEdge)((int)positionData.TargetEdge * -1);
+            var elementEdge = CoverTarget ? positionData.TargetEdge : (RectangleEdge)((int)positionData.TargetEdge * -1);
             Rectangle estimatedElementPosition = null;
-            estimatedElementPosition = this.CoverTarget
+            estimatedElementPosition = CoverTarget
                 ? AlignEdges(elementToPosition, target, positionData.TargetEdge, gap)
                 : AlignOppositeEdges(elementToPosition, target, positionData.TargetEdge, gap);
             if (positionData.AlignmentEdge == RectangleEdge.None)

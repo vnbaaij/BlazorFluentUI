@@ -1,7 +1,5 @@
 @page "/contextualMenuPage"
 
-@using Models
-
 <h1>ContextualMenu</h1>
 
 <Demo Header="Basic ContextMenu" Key="0" MetadataPath="ContextualMenuPage">

@@ -45,8 +45,8 @@ namespace BlazorFluentUI
 
         public ElementReference RootElementReference;
 
-        private ITheme _theme;
-        private bool reloadStyle;
+        //private ITheme _theme;
+        //private bool reloadStyle;
 
         [Inject] ScopedStatics ScopedStatics { get; set; }
 
@@ -74,7 +74,7 @@ namespace BlazorFluentUI
                 var rectangle = await JSRuntime.InvokeAsync<Rectangle>("FluentUIBaseComponent.measureElementRect", RootElementReference);
                 return rectangle;
             }
-            catch (JSException ex)
+            catch (JSException)
             {
                 return new Rectangle();
             }
@@ -87,7 +87,7 @@ namespace BlazorFluentUI
                 var rectangle = await JSRuntime.InvokeAsync<Rectangle>("FluentUIBaseComponent.measureElementRect", cancellationToken, RootElementReference);
                 return rectangle;
             }
-            catch (JSException ex)
+            catch (JSException) 
             {
                 return new Rectangle();
             }
@@ -100,7 +100,7 @@ namespace BlazorFluentUI
                 var rectangle = await JSRuntime.InvokeAsync<Rectangle>("FluentUIBaseComponent.measureElementRect", cancellationToken, elementReference);
                 return rectangle;
             }
-            catch (JSException ex)
+            catch (JSException)
             {
                 return new Rectangle();
             }
@@ -113,7 +113,7 @@ namespace BlazorFluentUI
                 var rectangle = await JSRuntime.InvokeAsync<Rectangle>("FluentUIBaseComponent.measureElementRect", elementReference);
                 return rectangle;
             }
-            catch (JSException ex)
+            catch (JSException)
             {
                 return new Rectangle();
             }
@@ -129,7 +129,7 @@ namespace BlazorFluentUI
 
         private void OnThemeChangedPrivate(object sender, ThemeChangedArgs themeChangedArgs)
         {
-            reloadStyle = true;
+            //reloadStyle = true;
         }
 
         //private ICollection<IRule> CreateGlobalCss()

@@ -1,6 +1,5 @@
-﻿
-@page  "/overflowSetPage"
-@using Models
+﻿@page  "/overflowSetPage"
+
 <h1>OverflowSet</h1>
 
 <h4>OverflowSet Horizontal Example</h4>
