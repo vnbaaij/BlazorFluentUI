@@ -43,7 +43,7 @@
                                   Style="@($"{item.Styles}")">
 
                         </Image>
-                        <BlazorFluentUI.Link Href="@item.LinkProperties?.Href" Target="@item.LinkProperties?.Target" ClassName="@FileListLinkRule.Selector.SelectorName">@item.Name</BlazorFluentUI.Link>
+                        <Link Href="@item.LinkProperties?.Href" Target="@item.LinkProperties?.Target" ClassName="@FileListLinkRule.Selector.SelectorName">@item.Name</Link>
                     </li>
                 }
             </ul>

@@ -34,8 +34,8 @@ namespace BlazorFluentUI
         {
             base.OnParametersSet();
 
-            if (string.IsNullOrWhiteSpace(this.Id))
-                this.Id = this.Id = $"g{Guid.NewGuid()}";
+            if (string.IsNullOrWhiteSpace(Id))
+                Id = Id = $"g{Guid.NewGuid()}";
         }
     }
 }

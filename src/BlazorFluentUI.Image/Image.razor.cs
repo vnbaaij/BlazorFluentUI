@@ -41,7 +41,7 @@ namespace BlazorFluentUI
         {
             string src;
             parameters.TryGetValue("Src", out src);
-            if (this.Src != src)
+            if (Src != src)
                 imageLoadState = ImageLoadState.NotLoaded;
 
 
@@ -91,7 +91,7 @@ namespace BlazorFluentUI
         protected string GetRootClasses()
         {
             string classNames = "";
-            classNames += this.MaximizeFrame ? " ms-Image--maximizeFrame" : "";
+            classNames += MaximizeFrame ? " ms-Image--maximizeFrame" : "";
             if (imageLoadState == ImageLoadState.Loaded && ShouldFadeIn && !ShouldStartVisible)
                 classNames += " fadeIn400";
             if (ImageFit == ImageFit.Center || ImageFit==ImageFit.CenterContain || ImageFit == ImageFit.CenterCover || ImageFit == ImageFit.Cover || ImageFit == ImageFit.Contain)

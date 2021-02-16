@@ -387,7 +387,7 @@ namespace BlazorFluentUI
 
         private async Task AdjustInputHeightAsync()
         {
-            if (this.AutoAdjustHeight == true && this.Multiline)
+            if (AutoAdjustHeight == true && Multiline)
             {
                 var scrollHeight = await JSRuntime.InvokeAsync<double>("FluentUIBaseComponent.getScrollHeight", textAreaRef);
                 //inlineTextAreaStyle = $"height: {scrollHeight}px";

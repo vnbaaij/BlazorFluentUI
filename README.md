@@ -8,7 +8,7 @@ https://www.blazorfluentui.net/
 https://blazorfluentui.azurewebsites.net/
 
 ## Telegram dev channel
-https://t.me/blazorfabric
+https://t.me/blazorfabric and then go to 'View discussion' which should bring you to the BlazorFluentUI Chat
 
 ## Dev Nuget Packages
 On each commit new dev nuget builds will be created automatically. To access those, add a new Package Source to Visual Studio or your project with the following URL:

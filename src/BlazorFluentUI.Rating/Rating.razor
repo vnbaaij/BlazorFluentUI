@@ -14,7 +14,7 @@
                   tabindex=@(ReadOnly ? "0" : "-1" )>
         @for (int i = 1; i <= Max; i++)
         {
-            var percantage = GetPercentageOf(i);
+            var percentage = GetPercentageOf(i);
             var value = i;
             var style = $"width:{GetPercentageOf(i)}%;";
             <button disabled="@(Disabled || ReadOnly)"
@@ -26,10 +26,10 @@
                     @onclick="(() =>OnClick(value))">
                 <span class="ms-Rating-labelText">Select @value of 5 stars</span>
                 <div class="ms-RatingStar-container">
-                    <Icon ClassName=@(Disabled ? "ms-RatingStar-back--disabled" : "ms-RatingStar-back") IconName="@(percantage > 0 ? IconName : UnselectedIcon)" />
+                    <Icon ClassName=@(Disabled ? "ms-RatingStar-back--disabled" : "ms-RatingStar-back") IconName="@(percentage > 0 ? IconName : UnselectedIcon)" />
                     @if (!Disabled)
                     {
-                        <Icon ClassName="ms-RatingStar-front" IconName="@(percantage > 0 ? IconName : UnselectedIcon)" Style=@($"width:{percantage}%;") />
+                        <Icon ClassName="ms-RatingStar-front" IconName="@(percentage > 0 ? IconName : UnselectedIcon)" Style=@($"width:{percentage}%;") />
                     }
                 </div>
             </button>

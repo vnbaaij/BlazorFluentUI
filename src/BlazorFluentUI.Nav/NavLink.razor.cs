@@ -18,15 +18,7 @@ namespace BlazorFluentUI
         //[Parameter] public string AriaLabel { get; set; }
         [Parameter] public bool Disabled { get; set; }
         [Parameter] public bool ForceAnchor { get; set; } //unused for now
-        [Obsolete("Use IconName instead")]
-        [Parameter]
-        public string Icon
-        {
-            set
-            {
-                IconName = value;
-            }
-        }
+        
         [Parameter] public string? IconName { get; set; }
         [Parameter] public string? IconSrc { get; set; }
         [Parameter] public bool IsButton { get; set; }

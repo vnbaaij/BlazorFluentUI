@@ -2,13 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Nullable>disable</Nullable>
-    <AssemblyName>BlazorFluentUI.MarqueeSelection</AssemblyName>
+    <AssemblyName>FluentUIBlazor.MarqueeSelection</AssemblyName>
     <Description>MarqueeSelection component from Blazor port of Fluent UI React library</Description>
     <RootNamespace>BlazorFluentUI</RootNamespace>
     <Nullable>disable</Nullable>
-    <RepositoryUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/BlazorFluentUI/BlazorFluentUI</PackageProjectUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 

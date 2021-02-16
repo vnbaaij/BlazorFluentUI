@@ -23,12 +23,12 @@ namespace BlazorFluentUI.DropdownInternal
 
         protected override Task OnParametersSetAsync()
         {
-            if (this.Dropdown!= null && 
-                (this.Dropdown.SelectedOptions.Count() > 0|| this.Dropdown.SelectedOption != null))
+            if (Dropdown!= null && 
+                (Dropdown.SelectedOptions.Count() > 0|| Dropdown.SelectedOption != null))
             {
-                if (this.Dropdown.SelectedOptions.FirstOrDefault(x => x.Key == this.Key) != null)
+                if (Dropdown.SelectedOptions.FirstOrDefault(x => x.Key == Key) != null)
                     isSelected = true;
-                else if (this.Dropdown.SelectedOption?.Key == this.Key)
+                else if (Dropdown.SelectedOption?.Key == Key)
                     isSelected = true;
                 else
                     isSelected = false;
@@ -67,16 +67,16 @@ namespace BlazorFluentUI.DropdownInternal
             {
                 if (isSelected) 
                 { 
-                    this.Dropdown.RemoveSelection(this.Key); 
+                    Dropdown.RemoveSelection(Key); 
                 } 
                 else { 
-                    this.Dropdown.AddSelection(this.Key); 
+                    Dropdown.AddSelection(Key); 
                 }
             }
             else
             {
-                this.Dropdown.ResetSelection(); 
-                this.Dropdown.AddSelection(this.Key);
+                Dropdown.ResetSelection(); 
+                Dropdown.AddSelection(Key);
             }
         }
 
@@ -88,7 +88,7 @@ namespace BlazorFluentUI.DropdownInternal
                     //builder.AddAttribute(i + 2, "Key", this.Key);
                 builder.AddAttribute(i + 2, "Disabled", Disabled);
                 builder.AddAttribute(i + 3, "ClassName", $"ms-Dropdown-item {(Disabled ? "is-disabled" : "")} {(Hidden ? "is-hidden" : "")}  {(isSelected ? "selected" : "")}");
-                builder.AddAttribute(i + 4, "Label", this.Text);
+                builder.AddAttribute(i + 4, "Label", Text);
                 builder.AddAttribute(i + 5, "Checked", isSelected);
                 builder.AddAttribute(i + 6, "CheckedChanged", EventCallback.Factory.Create<bool>(this, __value => { ApplyChange(); }));
                 builder.CloseComponent();
@@ -104,7 +104,7 @@ namespace BlazorFluentUI.DropdownInternal
                 {
                     builder2.OpenElement(i + 6, "span");
                     builder2.AddAttribute(i + 7, "class", "ms-Dropdown-optionText");
-                    builder2.AddContent(i + 8, this.Text);
+                    builder2.AddContent(i + 8, Text);
                     builder2.CloseElement();
                 }));                
                 builder.CloseComponent();
@@ -115,10 +115,10 @@ namespace BlazorFluentUI.DropdownInternal
         {
             builder.OpenElement(0, "div");
             builder.AddAttribute(1, "class", "mediumFont ms-Dropdown-itemHeader");
-            builder.AddElementReferenceCapture(2, element => this.RootElementReference = element);
+            builder.AddElementReferenceCapture(2, element => RootElementReference = element);
                 builder.OpenElement(3, "span");
                 builder.AddAttribute(4, "class", "ms-Dropdown-optionText");
-                builder.AddContent(5, this.Text);
+                builder.AddContent(5, Text);
                 builder.CloseElement();
             builder.CloseElement();
         }
@@ -129,7 +129,7 @@ namespace BlazorFluentUI.DropdownInternal
             builder.AddAttribute(1, "role", "separator");
             //builder.AddAttribute(3, "key", 1);
             builder.AddAttribute(2, "class", "ms-Dropdown-divider");
-            builder.AddElementReferenceCapture(3, element => this.RootElementReference = element);
+            builder.AddElementReferenceCapture(3, element => RootElementReference = element);
 
             builder.CloseElement();
         }

@@ -109,7 +109,7 @@ namespace BlazorFluentUI.ContextualMenuInternal
 
         protected override Task OnParametersSetAsync()
         {
-            if (this.Key == SubmenuActiveKey)
+            if (Key == SubmenuActiveKey)
                 isSubMenuOpen = true;
             else
                 isSubMenuOpen = false;
@@ -151,7 +151,7 @@ namespace BlazorFluentUI.ContextualMenuInternal
             // check for a right key press so we can open the submenu if it exists
             if (args.Key == "ArrowRight" && !isSubMenuOpen)
             {
-                await SetSubmenu.InvokeAsync(this.Key);
+                await SetSubmenu.InvokeAsync(Key);
             }
 
             // send it to the parent ContextualMenu so we can use a left key press to close the menu.
@@ -173,13 +173,13 @@ namespace BlazorFluentUI.ContextualMenuInternal
 
         public async Task ClickHandler(MouseEventArgs args)
         {
-            System.Diagnostics.Debug.WriteLine($"ContextualMenuItem called click: {this.Key}");
+            System.Diagnostics.Debug.WriteLine($"ContextualMenuItem called click: {Key}");
 
-            await this.OnClick.InvokeAsync(new ItemClickedArgs() { MouseEventArgs = new MouseEventArgs(), Key = this.Key });
-            this.Command?.Execute(CommandParameter);
+            await OnClick.InvokeAsync(new ItemClickedArgs() { MouseEventArgs = new MouseEventArgs(), Key = Key });
+            Command?.Execute(CommandParameter);
 
             if (!CanCheck)
-                await this.DismissMenu.InvokeAsync(true);
+                await DismissMenu.InvokeAsync(true);
             //await ParentContextualMenu.OnDismiss.InvokeAsync(true);
         }
 
@@ -195,7 +195,7 @@ namespace BlazorFluentUI.ContextualMenuInternal
                 enterTimer.Stop();
 
                 if (Items != null)
-                    SetSubmenu.InvokeAsync(this.Key);
+                    SetSubmenu.InvokeAsync(Key);
                 else
                     SetSubmenu.InvokeAsync(null);
             });
@@ -204,16 +204,16 @@ namespace BlazorFluentUI.ContextualMenuInternal
         protected override void BuildRenderTree(RenderTreeBuilder builder)
         {
             base.BuildRenderTree(builder);
-            if (this.ItemType == ContextualMenuItemType.Divider)
+            if (ItemType == ContextualMenuItemType.Divider)
             {
                 RenderSeparator(builder);
             }
-            else if (this.ItemType == ContextualMenuItemType.Header)
+            else if (ItemType == ContextualMenuItemType.Header)
             {
                 RenderSeparator(builder);
                 RenderHeader(builder);
             }
-            else if (this.ItemType == ContextualMenuItemType.Section)
+            else if (ItemType == ContextualMenuItemType.Section)
             {
 
             }
@@ -260,12 +260,12 @@ namespace BlazorFluentUI.ContextualMenuInternal
 
         private void RenderItemKind(RenderTreeBuilder builder)
         {
-            if (this.Href != null)
+            if (Href != null)
             {
                 RenderMenuAnchor(builder);
                 return;
             }
-            if (this.Split && Items != null)
+            if (Split && Items != null)
             {
                 //RenderSplitButton
                 return;
@@ -278,9 +278,9 @@ namespace BlazorFluentUI.ContextualMenuInternal
             builder.OpenElement(20, "div");
             //skip KeytipData
             builder.OpenElement(21, "a");
-            builder.AddAttribute(22, "href", this.Href);
+            builder.AddAttribute(22, "href", Href);
             builder.AddAttribute(23, "onkeydown", EventCallback.Factory.Create(this, KeyDownHandler));
-            builder.AddAttribute(23, "onclick", EventCallback.Factory.Create(this, () => this.DismissMenu.InvokeAsync(true)));
+            builder.AddAttribute(23, "onclick", EventCallback.Factory.Create(this, () => DismissMenu.InvokeAsync(true)));
             //builder.AddAttribute(23, "onclick:preventDefault", true);
             builder.AddAttribute(24, "role", "menuitem");
             builder.AddAttribute(25, "class", $"ms-ContextualMenu-link ms-ContextualMenu-anchorLink mediumFont {(Items?.Concat(Items.Where(x => x.Items != null).SelectMany(x => GetChild(x.Items))).FirstOrDefault(x => x.Checked == true) != null ? $" subgroup-is-checked" : "")}");  //the subgroup check is only for NavBar
@@ -322,7 +322,7 @@ namespace BlazorFluentUI.ContextualMenuInternal
         private void RenderMenuItemContent(RenderTreeBuilder builder)
         {
             builder.OpenElement(40, "div");
-            builder.AddAttribute(41, "class", this.Split ? "ms-ContextualMenu-linkContentMenu" : "ms-ContextualMenu-linkContent");
+            builder.AddAttribute(41, "class", Split ? "ms-ContextualMenu-linkContentMenu" : "ms-ContextualMenu-linkContent");
 
             if (HasCheckables)
                 RenderCheckMarkIcon(builder);
@@ -344,7 +344,7 @@ namespace BlazorFluentUI.ContextualMenuInternal
         private void RenderCheckMarkIcon(RenderTreeBuilder builder)
         {
             builder.OpenComponent<Icon>(45);
-            builder.AddAttribute(46, "IconName", this.Checked ? "CheckMark" : "");
+            builder.AddAttribute(46, "IconName", Checked ? "CheckMark" : "");
             builder.AddAttribute(47, "ClassName", "ms-ContextualMenu-checkmarkIcon");
             builder.CloseComponent();
         }
@@ -363,7 +363,7 @@ namespace BlazorFluentUI.ContextualMenuInternal
         {
             builder.OpenElement(55, "span");
             builder.AddAttribute(56, "class", "ms-ContextualMenu-itemText");
-            builder.AddContent(57, this.Text);
+            builder.AddContent(57, Text);
             builder.CloseElement();
         }
 
@@ -371,7 +371,7 @@ namespace BlazorFluentUI.ContextualMenuInternal
         {
             builder.OpenElement(61, "span");
             builder.AddAttribute(62, "class", "ms-ContextualMenu-secondaryText");
-            builder.AddContent(63, this.SecondaryText);
+            builder.AddContent(63, SecondaryText);
             builder.CloseElement();
         }
 

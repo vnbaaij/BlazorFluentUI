@@ -186,12 +186,12 @@ namespace BlazorFluentUI
                     if (Selection == null)
                     {
                         Selection = new Selection<TItem>();
-                        Selection.GetKey = this.GetKey;
+                        Selection.GetKey = GetKey;
                     }
                     _selection = Selection;
 
                     if (Selection.GetKey == null)
-                        Selection.GetKey = this.GetKey;
+                        Selection.GetKey = GetKey;
 
                     Selection.SetItems(ItemsSource);
                 }
@@ -201,8 +201,8 @@ namespace BlazorFluentUI
                         Selection.SetItems(ItemsSource, false);
                 }
 
-                if (Selection.SelectionMode != this.SelectionMode)
-                    Selection.SelectionMode = this.SelectionMode;
+                if (Selection.SelectionMode != SelectionMode)
+                    Selection.SelectionMode = SelectionMode;
             }
 
             await base.OnParametersSetAsync();

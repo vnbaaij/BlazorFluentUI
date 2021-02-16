@@ -112,7 +112,7 @@ namespace BlazorFluentUI
                 return base.SetParametersAsync(parameters);
             }
 
-            this.SetErrorMessage(true, nextIsRequired, nextValue, nextMinDate, nextMaxDate, nextInitialPickerDate);
+            SetErrorMessage(true, nextIsRequired, nextValue, nextMinDate, nextMaxDate, nextInitialPickerDate);
 
             var oldValue = SelectedDate;
             if (DateTimeCompareNullable(oldValue, nextValue) != 0 

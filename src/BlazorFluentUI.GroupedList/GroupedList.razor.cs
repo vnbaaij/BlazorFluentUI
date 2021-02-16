@@ -129,7 +129,7 @@ namespace BlazorFluentUI
 
             if (Selection != null)
             {
-                Selection.SelectionMode = this.SelectionMode;
+                Selection.SelectionMode = SelectionMode;
                 Selection.GetKey = item => GetKey(item);
             }
 

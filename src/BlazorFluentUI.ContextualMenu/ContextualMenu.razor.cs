@@ -92,7 +92,7 @@ namespace BlazorFluentUI
 
         protected void Dismiss(bool dismissAll = false)
         {
-            this.OnDismiss.InvokeAsync(dismissAll);
+            OnDismiss.InvokeAsync(dismissAll);
         }
 
         protected Action OnCalloutDismiss => () =>
@@ -113,7 +113,7 @@ namespace BlazorFluentUI
 
         protected Action<string> OnSetSubmenu => (key) =>
         {
-            this.SubmenuActiveKey = key;
+            SubmenuActiveKey = key;
         };
 
         protected override Task OnInitializedAsync()
@@ -125,12 +125,12 @@ namespace BlazorFluentUI
         protected override async Task OnParametersSetAsync()
         {
             await base.OnParametersSetAsync();
-            if (this.Items != null)
+            if (Items != null)
             {
-                if (this.Items.Count(x =>
+                if (Items.Count(x =>
                 x is IContextualMenuItem ? ((IContextualMenuItem)x).IconName != null | ((IContextualMenuItem)x).IconSrc != null : false) > 0)
                     HasIcons = true;
-                if (this.Items.Count(x => x is IContextualMenuItem ? ((IContextualMenuItem)x).CanCheck == true : false) > 0)
+                if (Items.Count(x => x is IContextualMenuItem ? ((IContextualMenuItem)x).CanCheck == true : false) > 0)
                     HasCheckables = true;
             }
         }
@@ -146,12 +146,12 @@ namespace BlazorFluentUI
 
         private async Task OnMenuOpenedAsync()
         {
-            await this.OnMenuOpened.InvokeAsync(this);
+            await OnMenuOpened.InvokeAsync(this);
         }
 
         public override async ValueTask DisposeAsync()
         {
-            await this.OnMenuDismissed.InvokeAsync(this);
+            await OnMenuDismissed.InvokeAsync(this);
             await base.DisposeAsync();
         }
 

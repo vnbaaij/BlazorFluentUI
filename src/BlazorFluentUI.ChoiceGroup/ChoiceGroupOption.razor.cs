@@ -261,21 +261,21 @@ namespace BlazorFluentUI
         protected override async Task OnParametersSetAsync()
         {
             await base.OnParametersSetAsync();
-            if (this.Item is string itemAsString)
+            if (Item is string itemAsString)
             {
-                this.Label = itemAsString;
+                Label = itemAsString;
             }
-            else if (this.Item is IChoiceGroupOption choiceGroupOption)
+            else if (Item is IChoiceGroupOption choiceGroupOption)
             {
-                this.Label = choiceGroupOption.Label;
-                this.IsVisible = choiceGroupOption.IsVisible;
-                this.IsDisabled = choiceGroupOption.IsDisabled;
+                Label = choiceGroupOption.Label;
+                IsVisible = choiceGroupOption.IsVisible;
+                IsDisabled = choiceGroupOption.IsDisabled;
             }
 
-            this._isSelected = Equals(this.ChoiceGroup.Value, this.Item);
+            _isSelected = Equals(ChoiceGroup.Value, Item);
 
-            if (string.IsNullOrWhiteSpace(this.Id))
-                this.Id = this.Id = $"g{Guid.NewGuid()}";
+            if (string.IsNullOrWhiteSpace(Id))
+                Id = Id = $"g{Guid.NewGuid()}";
         }
 
         //private void AddFieldHoverOrFocusStyles(HashSet<IRule> rules, ITheme theme, string pseudoSelector)
@@ -334,18 +334,18 @@ namespace BlazorFluentUI
 
         private async Task OnOptionClick(MouseEventArgs mouseEventArgs)
         {
-            if (!this.IsDisabled)
-                await this.OnClick.InvokeAsync(new ChoiceGroupOptionClickedEventArgs { Item = this.Item, MouseEventArgs = mouseEventArgs });
+            if (!IsDisabled)
+                await OnClick.InvokeAsync(new ChoiceGroupOptionClickedEventArgs { Item = Item, MouseEventArgs = mouseEventArgs });
         }
 
         private async Task OnOptionFocus(FocusEventArgs focusEventArgs)
         {
-            await this.OnFocus.InvokeAsync(new ChoiceGroupOptionFocusEventArgs { Item = this.Item, FocusEventArgs = focusEventArgs });
+            await OnFocus.InvokeAsync(new ChoiceGroupOptionFocusEventArgs { Item = Item, FocusEventArgs = focusEventArgs });
         }
 
         private async Task OnOptionBlur(FocusEventArgs focusEventArgs)
         {
-            await this.OnBlur.InvokeAsync(new ChoiceGroupOptionFocusEventArgs { Item = this.Item, FocusEventArgs = focusEventArgs });
+            await OnBlur.InvokeAsync(new ChoiceGroupOptionFocusEventArgs { Item = Item, FocusEventArgs = focusEventArgs });
         }
     }
 

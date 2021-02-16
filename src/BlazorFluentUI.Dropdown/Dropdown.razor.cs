@@ -188,7 +188,7 @@ namespace BlazorFluentUI
         public override async Task OnResizedAsync(double windowWidth, double windowHeight)
         {
             var oldBounds = dropDownBounds;
-            dropDownBounds = await this.GetBoundsAsync();
+            dropDownBounds = await GetBoundsAsync();
             if (oldBounds.width != dropDownBounds.width)
             {
                 StateHasChanged();
@@ -214,20 +214,20 @@ namespace BlazorFluentUI
 
         private async void GetDropdownBounds()
         {
-            dropDownBounds = await this.GetBoundsAsync();
+            dropDownBounds = await GetBoundsAsync();
         }
 
         protected override async Task OnParametersSetAsync()
         {
             await base.OnParametersSetAsync();
-            if (this.DefaultSelectedKeys != null)
+            if (DefaultSelectedKeys != null)
             {
-                foreach (var key in this.DefaultSelectedKeys)
+                foreach (var key in DefaultSelectedKeys)
                     AddSelection(key);
             }
-            if (this.DefaultSelectedOptions != null)
+            if (DefaultSelectedOptions != null)
             {
-                foreach (var option in this.DefaultSelectedOptions)
+                foreach (var option in DefaultSelectedOptions)
                     AddSelection(option.Key);
             }
             if (ItemTemplate == null)
@@ -315,7 +315,7 @@ namespace BlazorFluentUI
 
         protected Task ClickHandler(MouseEventArgs args)
         {
-            if (!this.Disabled)
+            if (!Disabled)
                 isOpen = !isOpen;  //There is a problem here.  Clicking when open causes automatic dismissal (light dismiss) so this just opens it again.
             return Task.CompletedTask;
         }

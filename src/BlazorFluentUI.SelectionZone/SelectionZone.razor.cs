@@ -124,10 +124,10 @@ namespace BlazorFluentUI
             return new SelectionZoneProps
             {
                 IsModal = isModal,
-                SelectionMode = this.SelectionMode,
-                DisableAutoSelectOnInputElements = this.DisableAutoSelectOnInputElements,
-                EnterModalOnTouch = this.EnterModalOnTouch,
-                EnableTouchInvocationTarget=this.EnableTouchInvocationTarget,
+                SelectionMode = SelectionMode,
+                DisableAutoSelectOnInputElements = DisableAutoSelectOnInputElements,
+                EnterModalOnTouch = EnterModalOnTouch,
+                EnableTouchInvocationTarget=EnableTouchInvocationTarget,
                 OnItemInvokeSet = (OnItemInvoked != null)
             };
         }
@@ -137,7 +137,7 @@ namespace BlazorFluentUI
             if (firstRender)
             {
                 dotNetRef = DotNetObjectReference.Create(this);
-                await JSRuntime!.InvokeVoidAsync("BlazorFluentUiSelectionZone.registerSelectionZone", dotNetRef, RootElementReference, new SelectionZoneProps { IsModal = this.isModal, SelectionMode = this.SelectionMode });
+                await JSRuntime!.InvokeVoidAsync("BlazorFluentUiSelectionZone.registerSelectionZone", dotNetRef, RootElementReference, new SelectionZoneProps { IsModal = isModal, SelectionMode = SelectionMode });
             }
             await base.OnAfterRenderAsync(firstRender);
         }

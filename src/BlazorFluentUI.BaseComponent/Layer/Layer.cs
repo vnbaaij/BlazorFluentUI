@@ -66,8 +66,8 @@ namespace BlazorFluentUI
         {
             builder.OpenElement(0, "span");
             builder.AddAttribute(1, "class", "ms-layer");
-            builder.AddAttribute(2, "style", this.Style);
-            builder.AddAttribute(3, "data-layer-id", this.id);
+            builder.AddAttribute(2, "style", Style);
+            builder.AddAttribute(3, "data-layer-id", id);
             builder.AddElementReferenceCapture(4, element => _element=element);
             builder.CloseElement();
         }
@@ -103,7 +103,7 @@ namespace BlazorFluentUI
 
         public async ValueTask DisposeAsync()
         {
-            await LayerHost?.RemoveHostedContentAsync(this.id);
+            await LayerHost?.RemoveHostedContentAsync(id);
             addedToHost = false;
             //return ValueTask.CompletedTask;
         }

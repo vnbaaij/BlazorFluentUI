@@ -73,7 +73,7 @@ namespace BlazorFluentUI
 
         protected override void OnInitialized()
         {
-            IsChecked = this.Checked ?? this.DefaultChecked;
+            IsChecked = Checked ?? DefaultChecked;
             base.OnInitialized();
         }
 
@@ -84,7 +84,7 @@ namespace BlazorFluentUI
 
         protected override Task OnParametersSetAsync()
         {
-            IsChecked = this.Checked ?? IsChecked;
+            IsChecked = Checked ?? IsChecked;
 
             if (string.IsNullOrWhiteSpace(AriaLabel) && string.IsNullOrWhiteSpace(BadAriaLabel))
                 LabelledById = LabelId;

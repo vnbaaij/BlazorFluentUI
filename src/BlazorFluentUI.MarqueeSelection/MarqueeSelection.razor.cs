@@ -68,8 +68,8 @@ namespace BlazorFluentUI
         {
             return new MarqueeSelectionProps
             {
-                IsDraggingConstrainedToRoot = this.IsDraggingConstrainedToRoot,
-                IsEnabled = this.IsEnabled
+                IsDraggingConstrainedToRoot = IsDraggingConstrainedToRoot,
+                IsEnabled = IsEnabled
             };
         }
 

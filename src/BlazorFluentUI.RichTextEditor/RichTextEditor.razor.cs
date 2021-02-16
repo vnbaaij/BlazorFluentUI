@@ -134,7 +134,7 @@ namespace BlazorFluentUI
 
                 internalRichText = args.Html;
 
-                if (args.Html != this.RichText)
+                if (args.Html != RichText)
                 {
                     _waitingText = args.Html;
                     _debounceTextTimer.Start();

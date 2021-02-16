@@ -250,16 +250,16 @@ namespace BlazorFluentUI
                     if (Selection == null)
                     {
                         Selection = new Selection<TItem>();
-                        Selection.GetKey = this.GetKey;
+                        Selection.GetKey = GetKey;
                     }
                     _selection = Selection;
 
                     if (Selection.GetKey == null)
-                        Selection.GetKey = this.GetKey;
+                        Selection.GetKey = GetKey;
                 }
 
-                if (Selection.SelectionMode != this.SelectionMode)
-                    Selection.SelectionMode = this.SelectionMode;
+                if (Selection.SelectionMode != SelectionMode)
+                    Selection.SelectionMode = SelectionMode;
             }
 
             //Setup SourceCache to pull from GetKey or from IList index
@@ -316,8 +316,8 @@ namespace BlazorFluentUI
                   PropertyChangedEventHandler changed = (sender, e) => handler(e);
                   return changed;
               },
-              handler => this.PropertyChanged += handler,
-              handler => this.PropertyChanged -= handler);
+              handler => PropertyChanged += handler,
+              handler => PropertyChanged -= handler);
 
             //watch for changes to any properties and pick out changes to Columns, need to return an initial value in case Columns was already set.
             var columnsObservable = Observable.Return(new PropertyChangedEventArgs("Columns"))
@@ -326,7 +326,7 @@ namespace BlazorFluentUI
                 .SelectMany(prop =>
                 {
                     // now watch for changes to the Columns object properties and return an initial value so that any following logic can be setup 
-                    return this.Columns.Aggregate(Observable.Empty<PropertyChangedEventArgs>(), (x, y) => x.Merge(y.WhenPropertyChanged));
+                    return Columns.Aggregate(Observable.Empty<PropertyChangedEventArgs>(), (x, y) => x.Merge(y.WhenPropertyChanged));
                 });
 
 
@@ -335,11 +335,11 @@ namespace BlazorFluentUI
             var filterExpression = Observable.Return(new PropertyChangedEventArgs("FilterPredicate")).Merge(columnsObservable).Where(colProp => colProp.PropertyName == "FilterPredicate").Select(row =>
             {
                 //remove isfiltered status on all columns
-                foreach (var col in this.Columns)
+                foreach (var col in Columns)
                     col.IsFiltered = false;
 
                 //get only columns with actual filter expressions (even if they don't succeed in filtering anything) and set isFiltered to true to show the icon
-                var columnsWithFilters = this.Columns
+                var columnsWithFilters = Columns
                   .Where(row => row.FilterPredicate != null).Select(x =>
                   {
                       x.IsFiltered = true;
@@ -366,7 +366,7 @@ namespace BlazorFluentUI
 
             var sortExpression = Observable.Return(new PropertyChangedEventArgs("IsSorted")).Merge(columnsObservable).Where(colProp => colProp.PropertyName == "IsSorted" || colProp.PropertyName == "IsSortedDescending").Select(x =>
             {
-                var sort = this.Columns.Where(x => x.IsSorted);
+                var sort = Columns.Where(x => x.IsSorted);
 
                 IComparer<TItem> sortChain;
                 if (sort.Count() > 1)
@@ -401,7 +401,7 @@ namespace BlazorFluentUI
 
             Observable.Return(new PropertyChangedEventArgs("IsSorted")).Merge(columnsObservable).Where(colProp => colProp.PropertyName == "IsSorted" || colProp.PropertyName == "IsSortedDescending").Select(x =>
             {
-                var sort = this.Columns.Where(x => x.IsSorted);
+                var sort = Columns.Where(x => x.IsSorted);
                 if (sort.Count() > 0)
                 {
                     return sort.Select(x => x.FieldSelector).ToList();
@@ -417,7 +417,7 @@ namespace BlazorFluentUI
 
             Observable.Return(new PropertyChangedEventArgs("IsSorted")).Merge(columnsObservable).Where(colProp => colProp.PropertyName == "IsSorted" || colProp.PropertyName == "IsSortedDescending").Select(x =>
             {
-                var sort = this.Columns.Where(x => x.IsSorted);
+                var sort = Columns.Where(x => x.IsSorted);
                 if (sort.Count() > 0)
                 {
                     return sort.Select(x => x.IsSortedDescending).ToList();
@@ -693,9 +693,9 @@ namespace BlazorFluentUI
             // TO-DO - will require measuring row cells, jsinterop
             double max = 0;
             int count = 0;
-            int totalCount = this._activeRows.Count;
+            int totalCount = _activeRows.Count;
 
-            foreach (var pair in this._activeRows) 
+            foreach (var pair in _activeRows) 
             {
                 pair.Value.MeasureCell(itemContainer.Index, width =>
                 {

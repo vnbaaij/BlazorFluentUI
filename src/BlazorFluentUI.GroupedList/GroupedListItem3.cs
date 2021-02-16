@@ -251,10 +251,10 @@ namespace BlazorFluentUI
 
         public PlainItem3(TItem item, int depth)
         {
-            this.Item = item;
-            this.Depth = depth;
+            Item = item;
+            Depth = depth;
 
-            if (this.Item == null)
+            if (Item == null)
                 throw new Exception("Item is null!");
         }
         public int Depth { get; private set; }

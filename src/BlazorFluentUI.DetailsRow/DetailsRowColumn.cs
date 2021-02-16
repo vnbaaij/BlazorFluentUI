@@ -113,14 +113,14 @@ namespace BlazorFluentUI
 
         protected void Initialize()
         {
-            this.WhenPropertyChanged = Observable.FromEvent<PropertyChangedEventHandler, PropertyChangedEventArgs>(
+            WhenPropertyChanged = Observable.FromEvent<PropertyChangedEventHandler, PropertyChangedEventArgs>(
               handler =>
               {
                   PropertyChangedEventHandler changed = (sender, e) => handler(e);
                   return changed;
               },
-              handler => this.PropertyChanged += handler,
-              handler => this.PropertyChanged -= handler);
+              handler => PropertyChanged += handler,
+              handler => PropertyChanged -= handler);
         }
     }
 

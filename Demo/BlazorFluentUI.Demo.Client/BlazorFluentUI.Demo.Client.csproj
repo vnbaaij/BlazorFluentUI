@@ -17,10 +17,6 @@
     <ProjectReference Include="..\BlazorFluentUI.Demo.Shared\BlazorFluentUI.Demo.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Properties\ServiceDependencies\" />
-  </ItemGroup>
-
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <ItemGroup>
       <DemoSource Include="$(ProjectDir)..\BlazorFluentUI.Demo.Shared\Pages\**\*.*" />

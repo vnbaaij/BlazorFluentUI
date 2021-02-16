@@ -14,15 +14,7 @@ namespace BlazorFluentUI
 
         [Parameter]
         public bool AllowZeroStars { get; set; }
-        [Obsolete("Use IconName instead")]
-        [Parameter]
-        public string Icon
-        {
-            set
-            {
-                IconName = value;
-            }
-        }
+
         [Parameter]
         public string IconName { get; set; } = "FavoriteStarFill";
         [Parameter]
@@ -38,7 +30,7 @@ namespace BlazorFluentUI
                     return;
                 }
                 rating = value;
-                RatingChanged.InvokeAsync(value);
+                RatingValueChanged.InvokeAsync(value);
                 OnChange.InvokeAsync(value);
                 //StateHasChanged();
             }
@@ -54,7 +46,7 @@ namespace BlazorFluentUI
         [Parameter]
         public Func<double, double, string> GetAriaLabel { get; set; }
         [Parameter]
-        public EventCallback<double> RatingChanged { get; set; }
+        public EventCallback<double> RatingValueChanged { get; set; }
         [Parameter]
         public EventCallback<double> OnChange { get; set; }
 
