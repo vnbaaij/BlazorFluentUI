@@ -1,6 +1,26 @@
 ﻿@page  "/ribbonMenuPage"
 @using System.Collections.ObjectModel;
-<h1>Ribbon Menu</h1>
+<header class="root">
+    <h1 class="title">Ribbon Menu</h1>
+</header>
+<div class="section" style="transition-delay: 0s;">
+    <div id="overview" tabindex="-1">
+        <h2 class="subHeading hiddenContent">Overview</h2>
+    </div>
+    <div class="content">
+        <div class="ms-Markdown">
+            <p>
+
+            </p>
+        </div>
+    </div>
+</div>
+<div class="section" style="transition-delay: 0s;">
+    <div id="overview" tabindex="-1">
+        <h2 class="subHeading">Usage</h2>
+    </div>
+    <div>
+        <div class="subSection">
 <RibbonMenu ItemsSource=@Items>
    <ItemTemplate Context="tab">
        <RibbonTab ItemsSource=@tab.Groups HeaderText=@tab.Header>
@@ -36,6 +56,8 @@
        </RibbonTab>
    </ItemTemplate>
 </RibbonMenu>
+        </div>
+        <div class="subSection">
 <h1>Ribbon Menu with backstage</h1>
 @*<Toggle @bind-Checked=@ShowBackstage OnText="On!" OffText="Off!" Label="Backstage state" />*@
 <RibbonMenu ItemsSource=@Items BackstageHeader="File" @bind-ShowBackstage=ShowBackstage>
@@ -80,10 +102,12 @@
         </div>
     </Backstage>
 </RibbonMenu>
-
-
+        </div>
+    </div>
+</div>
 
 @code{
+    //ToDo: Add Demo sections
     System.Collections.Generic.List<TabItem<GroupItem>> Items { get; set; } = new System.Collections.Generic.List<TabItem<GroupItem>>();
 
     private List<NavBarItem> backstageItems;

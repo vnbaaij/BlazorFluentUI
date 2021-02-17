@@ -18,6 +18,12 @@ https://pkgs.dev.azure.com/blazor-fluentui/5355f597-190a-4424-83da-cd89cd362a24/
 ```
 For a more detailed tutorial, head over to our [Public Feed](https://dev.azure.com/blazor-fluentui/Blazor%20FluentUI/_packaging?_a=feed&feed=DevChannel), click on "Connect To Feed" and select the platform. 
 
+## Breaking Changes for v5.0
+#### Renaming stuff and demo revamp
+All components have dropped the `BFU` prefix and names are now on par with their Fluent UI React counterparts (or will be soon). Change was made to not litter the codebase with the term `BFU` everywhere.
+
+The demo sites have been given some attention and look a lot better now (more in line with Fluent UI Rect docs).
+
 ## Breaking Changes for v4.0 (net5)
 
 #### List, DetailsList, GroupedList

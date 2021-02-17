@@ -7,7 +7,6 @@
 }
 else
 {
-    @*<div>*@
     <Layer ClassName="ms-Modal-Layer">
         <Popup Role=@((IsModeless || !IsBlocking) ? "dialog" : "alertdialog" )
                ClassName=@(!IsOpen && !isAnimating ? "ms-Modal-hiddenModal" : "")
@@ -46,5 +45,5 @@ else
             </div>
         </Popup>
     </Layer>
-    @*</div>*@
+
 }

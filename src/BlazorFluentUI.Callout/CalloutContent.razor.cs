@@ -138,14 +138,14 @@ namespace BlazorFluentUI
             //await HiddenChanged.InvokeAsync(true);
         }
 
-        //[JSInvokable]
-        //public async void FocusHandler()
-        //{
-        //    //Need way to tie focus handler between all the callouts (linked contextualmenus)  ... only dimiss when ALL of them lost focus.
-        //    System.Diagnostics.Debug.WriteLine($"Callout {PortalId} called dismiss from FocusHandler from {this.DirectionalHint}");
+        [JSInvokable]
+        public async void FocusHandler()
+        {
+            //Need way to tie focus handler between all the callouts (linked contextualmenus)  ... only dimiss when ALL of them lost focus.
+            System.Diagnostics.Debug.WriteLine($"Callout {PortalId} called dismiss from FocusHandler from {this.DirectionalHint}");
 
-        //    //await OnDismiss.InvokeAsync(null);
-        //}
+            //await OnDismiss.InvokeAsync(null);
+        }
 
         [JSInvokable]
         public async void ClickHandler()
