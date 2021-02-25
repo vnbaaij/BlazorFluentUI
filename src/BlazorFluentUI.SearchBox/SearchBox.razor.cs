@@ -30,6 +30,10 @@ namespace BlazorFluentUI
                     filter = value;
                     filterChanged += 2;
                     SearchNewEntries();
+                    if (!IsMultiSelect)
+                    {
+                        SelectedItemChanged.InvokeAsync();
+                    }
                 }
             }
         }
@@ -40,14 +44,16 @@ namespace BlazorFluentUI
         [Parameter] public bool IsDropDownOpen { get; set; }
         [Parameter] public bool IsLoading { get; set; }
 
-        [Parameter] public object SelectedItem { get; set; }
+        [Parameter] public T SelectedItem { get; set; }
+        [Parameter] public EventCallback<T> SelectedItemChanged { get; set; }
         [Parameter] public ICollection<T> SelectedItems { get; set; }
+        [Parameter] public EventCallback<ICollection<T>> SelectedItemsChanged { get; set; }
         [Parameter] public string Placeholder { get; set; } = "Enter here";
         [Parameter] public bool IsMultiSelect { get; set; }
         [Parameter] public Func<string, IEnumerable<T>> ProvideSuggestions { get; set; }
         [Parameter] public Func<object, string> ProvideString { get; set; }
         [Parameter] public int DropdownWidth { get; set; } = 0;
-        [Inject] private IJSRuntime? jSRuntime { get; set; }
+        [Inject] private IJSRuntime JSRuntime { get; set; }
 
         [Parameter] public EventCallback<bool> ContextMenuShownChanged { get; set; }
         [Parameter] public RenderFragment<T> SearchItemTemplate { get; set; }
@@ -103,6 +109,7 @@ namespace BlazorFluentUI
                 {
                     SelectedItems.Add((T)searchItem.Content);
                 }
+                SelectedItemsChanged.InvokeAsync(SelectedItems);
             }
             else
             {
@@ -114,6 +121,7 @@ namespace BlazorFluentUI
                 {
                     Filter = ProvideString((T)searchItem.Content);
                 }
+                SelectedItemChanged.InvokeAsync((T)searchItem.Content);
             }
             isOpen = false;
         }
@@ -121,6 +129,7 @@ namespace BlazorFluentUI
         void ClickedDeletedHandler(SelectedItem<T> selectedItem)
         {
             SelectedItems.Remove(selectedItem.Content);
+            SelectedItemsChanged.InvokeAsync(SelectedItems);
         }
     }
 }
